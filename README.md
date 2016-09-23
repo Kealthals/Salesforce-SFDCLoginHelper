@@ -10,6 +10,5 @@ HOW TO USE
   4. The helper will show up in the taskbar's notification area.
   5. Right Click the icon, choose the menu. Then, Enjoy.
   6. You could add this AHK script's shortcut to System Startup.
-  7. 
   
 Now the code is a mass, but it works. Refactoring.
