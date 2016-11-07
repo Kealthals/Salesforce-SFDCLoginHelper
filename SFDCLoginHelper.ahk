@@ -3,14 +3,14 @@
 #Persistent
 ;Setkeydelay,10
 applicationname=SFDCLoginHelper
-nowmode = Browser
+nowmode = Input
 nowbrowser = IE
 primode = 0
 
 ;Gosub,READINI
 ;Gosub,TRAYMENU
 
-
+;====================Menu Setting Start============================
 ;READINI:
 IfNotExist,%applicationname%.ini 
 {
@@ -78,6 +78,7 @@ Loop, %bi%
 
 Menu,Tray,Add,
 Menu,Tray,Add, OpenIni, MenuHandlerShowINI
+Menu,Tray,Add, Refresh(F9), MenuHandlerRefresh
 Menu,Tray,Add, Help, MenuHandlerShowHelp
 Menu,tray,add, About, MenuHandlerShowAbout
 Menu,Tray,Add,E&xit,EXIT
@@ -208,7 +209,11 @@ run %applicationname%.ini
 return
 
 MenuHandlerShowHelp:
-Msgbox Type sysout will turn to system.debug( auto. Press Alt + t to pin the active window. Press again to unpin.
+Msgbox "1.Type sysout will turn to system.debug( auto. 2.Press Alt + t to pin the active window. Press again to unpin. 3.Press F9 to reload INI."
+return
+
+MenuHandlerRefresh:
+reload
 return
 
 SetDataLoader(u,p){
@@ -223,17 +228,26 @@ Input(u,p){
 	return
 EXIT:
 ExitApp 
+;=================================Menu Setting End================================
 
-;F9::
-;reload
-;return
+;==================================Refresh Setting Start============================
+F9::
+reload
+return
+;================================Refresh Setting End==============================
 
+;================================Show Menu Setting Start========================
 ;^L::
 ;Menu, tray , show
 ;return
+;================================Show Menu Setting End========================
 
+;================================Pin Focus Window Start========================
 !t::
 Winset, Alwaysontop, , A
 return
+;================================Pin Focus Window End========================
 
+;================================Short Cut Start========================
 :*:sysout::system.debug(
+;================================Short Cut End==========================
