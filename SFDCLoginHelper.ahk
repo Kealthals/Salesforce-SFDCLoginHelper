@@ -51,8 +51,8 @@ Menu,tray,NoStandard
 Menu,tray,DeleteAll
 Menu, tray, add ,DataLoader , MenuHandlerCheck
 Menu, tray, add ,Browser, MenuHandlerCheck
-Menu, tray, Check, Browser
 Menu, tray, add ,Input, MenuHandlerCheck
+Menu, tray, Check, Input
 ;Menu, tray, disable, Input
 Menu, tray, add
 j=1
