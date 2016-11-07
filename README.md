@@ -12,3 +12,9 @@ HOW TO USE
   6. You could add this AHK script's shortcut to System Startup.
   
 Now the code is a mass, but it works. Refactoring.
+
+Release Note:
+V1.1
+  1. Add Reload Function to Menu. F9 also works.
+  2. Default Mode change from Browser to Input.
+  3. Help in Menu add descriptoon about reload.
